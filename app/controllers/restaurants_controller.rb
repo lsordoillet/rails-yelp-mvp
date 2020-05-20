@@ -14,9 +14,11 @@ class RestaurantsController < ApplicationController
   # POST "restaurants"
   def create
     @restaurant = Restaurant.new(restaurant_params)
-    @restaurant.save
-
-    redirect_to restaurant_path(@restaurant)
+    if @restaurant.save
+      redirect_to restaurant_path(@restaurant)
+    else
+      render :new
+    end
   end
 
   # GET "restaurants/38"
