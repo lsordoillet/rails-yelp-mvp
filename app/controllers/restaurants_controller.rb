@@ -23,7 +23,7 @@ class RestaurantsController < ApplicationController
 
   # GET "restaurants/38"
   def show
-    @reviews = Review.new
+    @review = Review.new
   end
 
   private

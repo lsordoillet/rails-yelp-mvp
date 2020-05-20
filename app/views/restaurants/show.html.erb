@@ -13,4 +13,12 @@
 
 
 <p><%= link_to "See all restaurants", restaurants_path, class: 'btn btn-primary'%></p>
-<p><%= link_to 'Leave a review', new_restaurant_review_path(@restaurant), class: 'btn btn-primary'%></p>
+
+ <%= simple_form_for [@restaurant, @review] do |f| %>
+  <%= f.input :rating %>
+  <%= f.input :content %>
+  <%= f.submit "Submit", class: 'btn btn-primary' %>
+  <% end %>
+
+
+<!-- <p><%= link_to 'Leave a review', new_restaurant_review_path(@restaurant), class: 'btn btn-primary'%></p> -->
